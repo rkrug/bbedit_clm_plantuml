@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<!--
+	plantuml language module for BBEdit
+	Rainer M Krug	
+-->
+<dict>
+
+<!-- Identification -->
+
+	<key>BBEditDocumentType</key> 				<string>CodelessLanguageModule</string>
+	<key>BBLMLanguageDisplayName</key> 			<string>Plantuml</string>
+	<key>BBLMLanguageCode</key> 				<string>PUML</string>
+	
+<!-- File Mapping -->
+
+	<key>BBLMSuffixMap</key>
+	<array>
+		<dict>
+			<key>BBLMLanguageSuffix</key> 		<string>.puml</string>
+		</dict>
+		<dict>
+			<key>BBLMLanguageSuffix</key> 		<string>.plantuml</string>
+		</dict>
+	</array>
+	<key>BBLMPreferredFilenameExtension</key>	<string>puml</string>
+	
+<!-- Services -->
+
+	<key>BBLMSupportsTextCompletion</key>		<true/>
+	<key>BBLMCanSpellCheckCodeRuns</key>		<false/>
+	<key>BBLMIsCaseSensitive</key> 				<true/>
+	<key>BBLMScansFunctions</key> 				<true/>
+
+
+
+	
+<!-- Controlling Syntax Coloring -->
+
+	<key>BBLMColorsSyntax</key> 				<true/>
+
+	<key>BBLMKeywordList</key>
+	<array>
+		<string>@startuml</string>
+		<string>@enduml</string>
+		<string>start</string>
+		<string>stop</string>
+		<string>repeat</string>
+		<string>repeat while</string>
+		<string>if</string>
+		<string>ifelse</string>
+		<string>else</string>
+		<string>end</string>
+	</array>
+	
+	<key>BBLMPredefinedNameList</key>
+	<array>
+		<string>:=</string>
+		<string>\;</string>
+		<string>no</string>
+	</array>
+
+<!-- Un/Comment Tokens -->
+
+	<key>BBLMCommentLineDefault</key>			<string>'' </string>
+
+	<!-- 
+	<key>BBLMCommentPrefixDefault</key>			<string></string>
+	<key>BBLMCommentSuffixDefault</key>			<string></string>
+ 	-->
+	
+<!-- Language Features -->
+
+	<key>Language Features</key>
+	<dict>
+		<key>Open Line Comments</key>			<string>''</string>
+		
+		<key>Open Block Comments</key>			<string></string>
+		<key>Close Block Comments</key>			<string></string>
+		
+		<key>Open Parameter Lists</key>			<string>(</string>
+		<key>Close Parameter Lists</key>		<string>)</string>
+		
+		<key>Open Statement Blocks</key>		<string>{</string>
+		<key>Close Statement Blocks</key>		<string>}</string>
+		
+		<key>Open Strings 1</key>				<string>&quot;</string>
+		<key>Close Strings 1</key>				<string>&quot;</string>
+		
+		<key>Close Strings 2</key>				<string>&apos;</string>
+		<key>Open Strings 2</key>				<string>&apos;</string>
+
+		<key>End-of-line Ends Strings 1</key>	<false/>
+		<key>End-of-line Ends Strings 2</key>	<false/>
+		
+		<key>Escape Char in Strings 1</key>		<string>\</string>
+		<key>Escape Char in Strings 2</key>		<string>\</string>
+		
+		<key>Identifier and Keyword Characters</key>	<string>1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz.</string>
+
+		<key>Prefix for Functions</key>			<string></string>
+		<key>Prefix for Procedures</key>		<string></string>
+
+		<key>Terminator for Prototypes 1</key>	<string></string>
+		<key>Terminator for Prototypes 2</key>	<string></string>
+
+		<key>Function Pattern</key>				<string>(?P&lt;function_name&gt;[a-zA-Z0-9_\.]+)\s*(&lt;-|=)\s*function\s*(?P&lt;parens&gt;\((?&gt;(?&gt;[^()]+)|(?P&gt;parens))*\))(?s).+?(?P&lt;function&gt;(?&gt;(?P&lt;braces&gt;{(?&gt;(?&gt;[^{}]+)|(?P&gt;braces))*})))</string>
+		
+		<key>String Pattern</key>
+		<string>(?x:
+			(?&gt;	"			(?s: \\. | [^"] )*?		(?: "			| $)	) |
+			
+			(?&gt;	'			(?s: \\. | [^'] )*?		(?: '			| $)	)
+		)</string>
+		
+		<key>Comment Pattern</key>
+		<string>(?x:
+			(?&gt;	[\#]		.*			$		)
+		)</string>
+		
+		<key>Skip Pattern</key>
+		<string>(?x:
+			(?&gt;
+				(?P&gt;comment) | (?P&gt;string)
+			)
+		)</string>
+		
+	</dict>
+	
+</dict>
+</plist>
